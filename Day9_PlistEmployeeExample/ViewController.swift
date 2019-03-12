@@ -12,7 +12,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.readInformationPlist()
+    }
+    
+    func readInformationPlist() {
+        if let bundlePath = Bundle.main.path(forResource: "Employee", ofType: "plist") {
+            let dictionary = NSMutableDictionary(contentsOfFile: bundlePath)
+            
+            print(dictionary!.description)
+        }
     }
 
 
